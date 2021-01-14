@@ -236,14 +236,14 @@ class DiGraph:
         if len(self.connectionsSrc[node_id]) != 0:
             for x in self.connectionsSrc[node_id]:
                 self.connectionsDest.get(x, {}).pop(node_id)
-                self.changes += 1
+                # self.changes += 1
                 self.numEdges -= 1
         self.connectionsSrc.pop(node_id)
 
         if len(self.connectionsDest[node_id]) != 0:
             for x in self.connectionsDest[node_id]:
                 self.connectionsSrc.get(x, {}).pop(node_id)
-                self.changes += 1
+                # self.changes += 1
                 self.numEdges -= 1
         self.connectionsDest.pop(node_id)
 
